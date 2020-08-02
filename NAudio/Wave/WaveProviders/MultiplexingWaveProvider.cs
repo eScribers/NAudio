@@ -53,7 +53,8 @@ namespace NAudio.Wave
             {
                 if (WaveFormat == null)
                 {
-                    if (input.WaveFormat.Encoding == WaveFormatEncoding.Pcm)
+                    if (input.WaveFormat.Encoding == WaveFormatEncoding.Pcm ||
+                        input.WaveFormat.Encoding == WaveFormatEncoding.Extensible)
                     {
                         WaveFormat = new WaveFormat(input.WaveFormat.SampleRate, input.WaveFormat.BitsPerSample, outputChannelCount);
                     }
